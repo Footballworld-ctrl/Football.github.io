@@ -1,0 +1,94 @@
+[index.html](https://github.com/user-attachments/files/26052410/index.html)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컴퓨터 보안 수업 페이지</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+}
+
+header{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+section{
+    background:white;
+    margin:10px;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#333;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:10px;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>컴퓨터 보안 수업</h1>
+</header>
+
+<!-- 1번째 섹션 -->
+<section>
+<h2>컴퓨터 보안 소개</h2>
+<p>
+컴퓨터 보안은 컴퓨터 시스템과 네트워크, 데이터를 보호하는 기술입니다.
+해킹, 악성코드, 정보 유출 등을 방지하기 위해 다양한 보안 기술을 사용합니다.
+</p>
+</section>
+
+<!-- 2번째 섹션 -->
+<section>
+<h2>내 수업 정보</h2>
+<ul>
+<li>과목: 컴퓨터 보안 기초</li>
+<li>수업 시간: 매주 수요일</li>
+<li>강의실: 컴퓨터실 301호</li>
+<li>담당 교사: 홍길동</li>
+</ul>
+</section>
+
+<!-- 3번째 섹션 -->
+<section>
+<h2>학습 자료</h2>
+<p>
+수업 자료와 과제는 학교 LMS 또는 이메일을 통해 제공됩니다.
+예습과 복습을 통해 보안 지식을 꾸준히 학습하세요.
+</p>
+</section>
+
+<!-- 4번째 섹션 -->
+<section>
+<h2>연락처</h2>
+<p>
+이메일: teacher@example.com<br>
+전화: 010-1234-5678
+</p>
+</section>
+
+<footer>
+<p>© 2026 컴퓨터 보안 수업 페이지. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
