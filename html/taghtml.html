@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyword" content="HTML, CSS, Web3D, 통합문서">
+    <meta name="author" content="박경배">
+    <meta name="description" content="HTML5 통합 예제 강좌">
+    <title>HTML5 통합 예제 문서</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
+        section { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px; }
+        h1, h2, h3 { color: #333; }
+        table { border-collapse: collapse; width: 100%; max-width: 600px; }
+        th, td { border: 1px solid black; padding: 8px; text-align: center; }
+        .bookmark-link { background-color: #f0f0f0; padding: 5px; }
+    </style>
+</head>
+<body>
+
+    <section>
+        <h1>h1: 제목 태그 및 문단 구분</h1>
+        <h2>h2: 소제목 예시</h2>
+        <h3>h3: 더 작은 제목</h3>
+        <p>이 문서는 HTML의 기본 프레임과 다양한 태그들을 통합한 것입니다. (FrameHtml.html 참고)</p>
+    </section>
+
+    <section>
+        <h2>문단과 텍스트 스타일</h2>
+        <p><strong>p 태그</strong>는 Paragraph를 뜻하며 한 줄 띄고 줄바꿈을 합니다.</p>
+        <br>
+        <strong>br 태그</strong>는 Break를 의미하며 단순히 줄을 바꿉니다.
+        <hr>
+        <p><i>italic(흘림체)</i>, <b>bold(강조체)</b>, <em>emphasized(강조)</em>, <code>code(프로그램 코드)</code></p>
+        <p>수식 표현: 100<sup>superscript(윗첨자)</sup></p>
+        
+        <h3>Pre 태그 (Pre-formatted)</h3>
+        <pre>
+Pre 태그는 
+   편집기에서 작성한 
+   공백과 줄바꿈을 
+   그대로 표시합니다.
+        </pre>
+    </section>
+
+    <section>
+        <h2>특수 문자 표시</h2>
+        <ul>
+            <li>공백: &nbsp; &nbsp; (nbsp 사용)</li>
+            <li>부등호: &lt; (less than), &gt; (greater than)</li>
+            <li>기호: &amp; (ampersand), &quot; (이중 따옴표), &apos; (단일 따옴표)</li>
+            <li>통화 및 저작권: &cent; (센트), &euro; (유로), &copy; (Copyright), &reg; (Registered)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>테이블 및 병합 (Colspan/Rowspan)</h2>
+        <table border="1">
+            <caption>Table1. HTML &amp; X3D 통합 테이블</caption>
+            <thead>
+                <tr>
+                    <th>HTML5</th>
+                    <th>CSS3</th>
+                    <th>Web3D</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Contents</td>
+                    <td>Design</td>
+                    <td>Scene</td>
+                </tr>
+                <tr>
+                    <td colspan="2">colspan (2칸 병합)</td>
+                    <td rowspan="2">rowspan (2줄 병합)</td>
+                </tr>
+                <tr>
+                    <td>데이터 1</td>
+                    <td>데이터 2</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2 id="ai_section">하이퍼링크 및 북마크</h2>
+        <p id="ai"><strong>인공지능(AI)</strong>: 인간의 지능을 기계가 모방하는 기술입니다.</p>
+        
+        <ul>
+            <li><a href="https://ai.yit.ac.kr" target="_self">외부 사이트 연결 (현재 창)</a></li>
+            <li><a href="mailto:gbpark@yit.ac.kr">관리자에게 메일 보내기</a></li>
+            <li><a href="#ai_section" class="bookmark-link">페이지 내부 북마크 (인공지능이란?)</a></li>
+        </ul>
+
+        <pre>
+🔍 인공지능의 핵심 기능
+- 학습 (Learning)
+- 추론 (Reasoning)
+- 자연어 처리 (NLP)
+        </pre>
+    </section>
+
+</body>
+</html>
