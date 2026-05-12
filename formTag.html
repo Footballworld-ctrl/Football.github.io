@@ -1,0 +1,47 @@
+<a href="formTag.html">
+    📄 입력 폼 실습 코드 보기
+</a><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="test.jsp" method="post">
+
+        <input type="text" id="fname" name="gname"><br>
+
+        <label for="name">이름</label>
+
+        <input type="password"><br>
+
+        라디오 버튼
+        <input type="radio" value="man">
+        <input type="radio" value="woman">
+        <input type="radio" value="child"><br>
+
+        체크박스:
+        <input type="checkbox" value="man">
+        <input type="checkbox" value="woman">
+        <input type="checkbox" value="children"><br>
+
+        <input type="button" value="남자">
+        <input type="button" value="여성">
+
+    </form>
+<form action="server.jsp" method="get">
+    <legend>회원정보</legend>
+    <lable for="file">파일선택</lable>
+    <input type="file" id="file"><br>
+    <input type="image" id="image" src="" width="40" height="20" alt="전송"><br>
+    <lable for="search">찾기:</lable>
+    <input type="search" id="search"><br>
+    <input type="hidden" id="hidden" value="secretToken123">
+    </fieldset>
+    </form>
+
+</body>
+</html>
