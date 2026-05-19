@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>예제</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<audio src="audio/fassounds-escape-your-love.mp3"
+        autoplay controls loop="true">
+</audio>
+
+</body>
+</html>
