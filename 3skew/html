@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+transform 속성 중 skew()는 요소를 기울이는 변형을 할 때 사용합니다.
+
+transform: skew(x각도, y각도);
+
+x각도 : X축 방향으로 기울이기
+예: skew(20deg, 0) → X축 방향으로 20도 기울임
+
+y각도 : Y축 방향으로 기울이기
+예: skew(0, 20deg) → Y축 방향으로 20도 기울임
+
+두 축 모두 입력하면 X축과 Y축을 동시에 기울입니다.
+예: skew(20deg, 20deg)
+-->
+
+<html>
+<head>
+    <title>예제7-3 Transform-skew()</title>
+    <meta charset="utf-8">
+
+    <style>
+        /* 공통 박스 스타일 */
+        .box {
+            width: 120px;                  /* 박스 너비 */
+            height: 80px;                  /* 박스 높이 */
+            margin: 30px;                  /* 바깥 여백 */
+            background-color: lightblue;   /* 배경색 */
+            line-height: 80px;             /* 텍스트 세로 가운데 정렬 */
+            text-align: center;            /* 텍스트 가로 가운데 정렬 */
+            font-weight: bold;             /* 글자 굵게 */
+            display: inline-block;         /* 가로로 나란히 배치 */
+        }
+
+        /* X축으로만 기울이기 */
+        .skewX {
+            transform: skew(20deg, 0);
+        }
+
+        /* Y축으로만 기울이기 */
+        .skewY {
+            transform: skew(0, 20deg);
+        }
+
+        /* X축과 Y축 동시에 기울이기 */
+        .skewXY {
+            transform: skew(20deg, 20deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Transform - skew()</h1>
+
+    <!-- X축 방향으로만 기울임 -->
+    <div class="box skewX">
+        Skew X<br>
+        skew(20deg, 0)
+    </div>
+
+    <!-- Y축 방향으로만 기울임 -->
+    <div class="box skewY">
+        Skew Y<br>
+        skew(0, 20deg)
+    </div>
+
+    <!-- X축과 Y축 동시에 기울임 -->
+    <div class="box skewXY">
+        Skew XY<br>
+        skew(20deg, 20deg)
+    </div>
+
+</body>
+</html>
+```
+
+
