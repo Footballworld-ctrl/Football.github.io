@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 예제 8-13 ~ 8-16 통합</title>
+    <style>
+        body {
+            font-family: Arial, "Malgun Gothic", sans-serif;
+            max-width: 900px;
+            margin: 28px auto;
+            padding: 0 18px;
+            line-height: 1.65;
+            color: #222;
+        }
+        section {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 18px;
+            margin: 18px 0;
+        }
+        input, select {
+            padding: 8px;
+            margin: 5px 3px;
+        }
+        button {
+            padding: 9px 13px;
+            margin: 5px 3px;
+            cursor: pointer;
+        }
+        .result {
+            font-weight: bold;
+            color: #0759a5;
+            white-space: pre-wrap;
+        }
+        .explain {
+            background: #f5f5f5;
+            color: #444;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        code {
+            background: #eee;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript 예제 8-13 ~ 8-16</h1>
+    <p>조건문과 반복문을 연습하는 통합 파일입니다. 각 영역의 버튼을 눌러 실행 결과를 확인하세요.</p>
+
+    <!-- 예제 8-13: if-else 조건문 -->
+    <section>
+        <h2>예제 8-13. if-else 조건문</h2>
+        <p>입력한 연도가 윤년인지 판단합니다.</p>
+        <label for="yearInput">연도 입력:</label>
+        <input type="number" id="yearInput" placeholder="예: 2024">
+        <button type="button" onclick="checkLeapYear()">윤년 판단</button>
+        <p id="leapResult" class="result">결과가 이곳에 표시됩니다.</p>
+        <p class="explain">
+            초보자 설명: <code>if</code>는 조건이 참일 때 실행하고, <code>else</code>는 조건이 거짓일 때 실행합니다.
+            윤년은 4로 나누어떨어지고 100으로 나누어떨어지지 않는 해이거나, 400으로 나누어떨어지는 해입니다.
+            예를 들어 2024년은 윤년이고 1900년은 윤년이 아닙니다.
+        </p>
+    </section>
+
+    <!-- 예제 8-14: else if 조건문 -->
+    <section>
+        <h2>예제 8-14. else if 조건문</h2>
+        <p>현재 시간을 기준으로 오전, 오후, 저녁을 구분합니다.</p>
+        <button type="button" onclick="showTimePeriod()">현재 시간 확인</button>
+        <p id="timeResult" class="result">버튼을 누르면 현재 시간과 시간대가 표시됩니다.</p>
+        <p class="explain">
+            초보자 설명: 조건이 여러 개라면 <code>else if</code>를 사용합니다.
+            위에서부터 조건을 검사해 처음으로 참인 부분을 실행합니다.
+            이 예제에서는 0~11시는 오전, 12~17시는 오후, 18~23시는 저녁으로 표시합니다.
+        </p>
+    </section>
+
+    <!-- 예제 8-15: switch-case 조건문 -->
+    <section>
+        <h2>예제 8-15. switch-case 조건문</h2>
+        <p>학점을 선택하면 해당 학점에 대한 설명을 표시합니다.</p>
+        <label for="gradeInput">학점 선택:</label>
+        <select id="gradeInput">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="F">F</option>
+        </select>
+        <button type="button" onclick="showGrade()">학점 확인</button>
+        <p id="gradeResult" class="result">학점을 선택하고 버튼을 누르세요.</p>
+        <p class="explain">
+            초보자 설명: <code>switch</code>는 입력값과 일치하는 <code>case</code>를 찾아 실행합니다.
+            <code>break</code>는 해당 case 실행이 끝난 뒤 switch 문을 빠져나오게 합니다.
+            <code>default</code>는 일치하는 case가 없을 때 실행되는 기본 선택지입니다.
+        </p>
+    </section>
+
+    <!-- 예제 8-16: for 반복문 -->
+    <section>
+        <h2>예제 8-16. for 반복문</h2>
+        <p>1부터 입력한 숫자까지 숫자를 출력합니다. 최대 30까지 입력할 수 있습니다.</p>
+        <label for="countInput">마지막 숫자:</label>
+        <input type="number" id="countInput" min="1" max="30" value="5">
+        <button type="button" onclick="runForLoop()">반복 실행</button>
+        <p id="loopResult" class="result">반복 결과가 이곳에 표시됩니다.</p>
+        <p class="explain">
+            초보자 설명: <code>for (let i = 1; i <= count; i++)</code>는 세 부분으로 구성됩니다.
+            <code>let i = 1</code>은 시작값, <code>i <= count</code>는 반복을 계속할 조건,
+            <code>i++</code>는 한 번 반복할 때마다 i를 1 증가시킨다는 뜻입니다.
+        </p>
+    </section>
+
+    <script>
+        // 예제 8-13: if-else를 사용해 윤년 판단하기
+        function checkLeapYear() {
+            const input = document.getElementById("yearInput").value;
+            const result = document.getElementById("leapResult");
+
+            // 아무것도 입력하지 않았는지 확인합니다.
+            if (input.trim() === "") {
+                result.textContent = "연도를 입력하세요.";
+                return;
+            }
+
+            const year = Number(input);
+
+            if (!Number.isInteger(year) || year < 1) {
+                result.textContent = "1 이상의 정수를 입력하세요.";
+            } else if ((year % 400 === 0) ||
+                       (year % 4 === 0 && year % 100 !== 0)) {
+                result.textContent = year + "년은 윤년입니다.";
+            } else {
+                result.textContent = year + "년은 윤년이 아닙니다.";
+            }
+        }
+
+        // 예제 8-14: else if를 사용해 현재 시간대 표시하기
+        function showTimePeriod() {
+            const now = new Date();      // 현재 날짜와 시간을 가져옵니다.
+            const hour = now.getHours(); // 현재 시각의 시(hour)를 가져옵니다.
+            let period;
+
+            if (hour < 12) {
+                period = "오전";
+            } else if (hour < 18) {
+                period = "오후";
+            } else {
+                period = "저녁";
+            }
+
+            document.getElementById("timeResult").textContent =
+                "현재 시각: " + now.toLocaleTimeString() +
+                "\n시간대: " + period;
+        }
+
+        // 예제 8-15: switch-case로 학점 설명하기
+        function showGrade() {
+            const grade = document.getElementById("gradeInput").value;
+            let message;
+
+            switch (grade) {
+                case "A":
+                    message = "A 학점: 매우 우수합니다.";
+                    break;
+                case "B":
+                    message = "B 학점: 잘했습니다.";
+                    break;
+                case "C":
+                    message = "C 학점: 보통입니다.";
+                    break;
+                case "D":
+                    message = "D 학점: 조금 더 공부하세요.";
+                    break;
+                case "F":
+                    message = "F 학점: 재학습이 필요합니다.";
+                    break;
+                default:
+                    message = "올바른 학점을 선택하세요.";
+            }
+
+            document.getElementById("gradeResult").textContent = message;
+        }
+
+        // 예제 8-16: for 반복문으로 1부터 숫자까지 출력하기
+        function runForLoop() {
+            const input = document.getElementById("countInput").value;
+            const result = document.getElementById("loopResult");
+
+            if (input.trim() === "") {
+                result.textContent = "마지막 숫자를 입력하세요.";
+                return;
+            }
+
+            const count = Number(input);
+
+            if (!Number.isInteger(count) || count < 1 || count > 30) {
+                result.textContent = "1부터 30 사이의 정수를 입력하세요.";
+                return;
+            }
+
+            let output = "";
+
+            for (let i = 1; i <= count; i++) {
+                output += i + (i < count ? ", " : "");
+            }
+
+            result.textContent = "반복 결과: " + output;
+        }
+    </script>
+</body>
+</html>
